@@ -11,9 +11,16 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+  padding: 16px;
   color: white;
 }
 
 button {
   font-size: 48px;
+}
+
+a {
+  color: #09f;
+  font-size: 32px;
+  text-decoration: none;
 }
