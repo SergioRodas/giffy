@@ -9,7 +9,12 @@ export default function SearchResults ({ params }) {
     return <>
         {loading
             ? <Spinner/>
-            : <ListOfGifs gifs={gifs} />
+            : <>
+              <h3 className="App-title">
+              {decodeURI(keyword)}
+              </h3>
+              <ListOfGifs gifs={gifs} />
+            </>
         }
     </>
 }
