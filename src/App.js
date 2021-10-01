@@ -14,8 +14,10 @@ function App() {
       <div className="App">
         <section className="App-content">
         <Link to="/">
-          <h1>App</h1>
-        </Link>
+            <figure className="App-logo">
+              <img alt='Giffy logo' src='/logo.png' />
+            </figure>
+          </Link>
         <GifsContextProvider>
           <Route component={Home} path="/"/>
           <Route component={SearchResults} path="/search/:keyword"/>
