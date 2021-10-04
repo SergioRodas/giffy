@@ -1,6 +1,7 @@
-import { useEffect, useState, useRef } from "react";
-import getTrendingTerms from "../../services/getTrendingTermsService"
-import Category from "../Category";
+import { useEffect, useState } from "react";
+import getTrendingTerms from "services/getTrendingTermsService"
+import Category from "components/Category"
+import useNearScreen from "hooks/useNearScreen"
 
 function TrendingSearches () {
     const [trends, setTrends] = useState([])
@@ -12,29 +13,14 @@ function TrendingSearches () {
     return <Category name='Tendencias' options={trends}/>
 }
 
+
+
 export default function LazyTrending () {
-    const [show, setShow] = useState(false)
-    const elementRef = useRef()
+    const {isNearScreen, fromRef} = useNearScreen({ distance: '200px' })
 
-    useEffect(function () {
-        const onChange = (entries, observer) => {
-            const el = entries[0]
-            if (el.isIntersecting) {
-                setShow(true)
-                observer.disconnect()
-            }
-        }
 
-        const observer = new IntersectionObserver(onChange, {
-            rootMargin : '100px'
-        })
 
-        observer.observe(elementRef.current)
-
-        return () => observer.disconnect()
-    })
-
-    return <div ref={elementRef}>
-        {show ? <TrendingSearches/> : null}
+    return <div ref={fromRef}>
+        {isNearScreen ? <TrendingSearches/> : null}
     </div>
 }
