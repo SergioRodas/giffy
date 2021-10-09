@@ -7,9 +7,9 @@ import { useCallback } from "react";
 
 
 export default function Home() {
-    const [path, pushLocation] = useLocation()
+    const [pushLocation] = useLocation()
 
-    const {loading, gifs} = useGifs()
+    const {gifs} = useGifs()
 
     const handleSubmit = useCallback(({keyword}) => {
         // navegar a otra ruta

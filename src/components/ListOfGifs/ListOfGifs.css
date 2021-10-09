@@ -1,30 +1,17 @@
-:root {
-  --results-columns: 2;
-}
-
 .ListOfGifs {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 0 16px;
-  align-items: center;
-  min-height: 100vh;
+  display: -webkit-box; 
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: -30px; 
+  width: auto;
 }
 
-.ListOfGifs-item {
-
-  background-color: #eee;
-  display: inline-block;
-  width: 100%;
+.ListOfGifs-Column {
+  padding-left: 30px; 
+  background-clip: padding-box;
 }
 
-@media (min-width: 600px) {
-  :root {
-    --results-columns: 3;
-  }
-}
-
-@media (min-width: 800px) {
-  :root {
-    --results-columns: 4;
-  }
+.ListOfGifs-Column > div {
+  background: grey;
+  margin-bottom: 30px;
 }
