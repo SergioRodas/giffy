@@ -6,7 +6,7 @@ import Masonry from 'react-masonry-css'
 export default function ListOfGifs ({gifs}) {
 
     const breakpoints = {
-        default: 4,
+        default: 3,
         1100: 3,
         700: 2,
         500: 1

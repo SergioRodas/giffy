@@ -4,7 +4,7 @@ import GifsContext from "../context/GifsContext"
 
 const INITIAL_PAGE = 0
 
-export function useGifs ({ keyword } = { keyword: 'hasbulla'}) {
+export function useGifs ({ keyword } = { keyword: null}) {
     const [loading, setLoading] = useState(false)
     const [loadingNextPage, setLoadingNextPage] = useState(false)
 
@@ -12,7 +12,7 @@ export function useGifs ({ keyword } = { keyword: 'hasbulla'}) {
     const {gifs, setGifs} = useContext(GifsContext)
     
     // Recuperamos la keyword del localStorage
-    const keywordToUse = keyword || localStorage.getItem('lastKeyword') || 'hasbulla'
+    const keywordToUse = keyword || localStorage.getItem('lastKeyword') || 'monos'
     useEffect(function () {
       setLoading(true)
 

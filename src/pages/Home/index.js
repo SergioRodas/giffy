@@ -7,9 +7,9 @@ import { useCallback } from "react";
 
 
 export default function Home() {
-    const [pushLocation] = useLocation()
+    const [path, pushLocation] = useLocation() //eslint-disable-line
 
-    const {gifs} = useGifs()
+    const {loading, gifs} = useGifs() //eslint-disable-line
 
     const handleSubmit = useCallback(({keyword}) => {
         // navegar a otra ruta
@@ -19,11 +19,14 @@ export default function Home() {
     return (
         <>
         <SearchForm onSubmit={handleSubmit}/>
-        <h3 className="App-title">Última búsqueda</h3>
-        <ListOfGifs gifs={gifs}/>
-        <h3 className="App-title">Gif más populares</h3>
-        <div className="App-Category">
-            <TrendingSearches/>
+        <div className="App-main">
+            <div className="App-results">
+                <h3 className="App-title">Última búsqueda</h3>
+                <ListOfGifs gifs={gifs}/>
+            </div>
+            <div className="App-Category">
+                <TrendingSearches/>
+            </div>
         </div>
         </>
     )

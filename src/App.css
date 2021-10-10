@@ -36,11 +36,8 @@ background-image: repeating-linear-gradient(45deg, hsla(64,83%,54%,0.05) 0px, hs
   align-items: flex-start;
 }
 
-.App-results {
-  flex-shrink: 2;
-}
 
-.App-category {
+.App-Category {
   margin-bottom: 25px;
   width: 100%;
 }
@@ -50,10 +47,10 @@ background-image: repeating-linear-gradient(45deg, hsla(64,83%,54%,0.05) 0px, hs
     flex-direction: initial;
   }
 
-  .App-category{
+  .App-Category{
     padding: 0 2em;
     position: sticky;
     top: 0;
-    width: 40%;
+    width: 35%;
   }
 }
