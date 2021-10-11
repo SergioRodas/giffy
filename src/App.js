@@ -5,6 +5,7 @@ import Detail from './pages/Detail'
 import StaticContext from './context/StaticContext';
 import { Link, Route } from 'wouter'
 import { GifsContextProvider } from './context/GifsContext';
+import { Suspense } from 'react';
 
 
 
@@ -12,6 +13,7 @@ function App() {
   return (
     <StaticContext.Provider value={{name:'Eric Cartman'}}>
       <div className="App">
+      <Suspense>
         <section className="App-content">
         <Link to="/">
             <figure className="App-logo">
@@ -34,6 +36,7 @@ function App() {
           />
         </GifsContextProvider>
         </section>
+      </Suspense>
       </div>
     </StaticContext.Provider>
   )
