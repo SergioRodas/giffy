@@ -1,9 +1,11 @@
-import { useLocation } from "wouter";
-import TrendingSearches from "components/TrendingSearches";
-import ListOfGifs from "components/ListOfGifs";
-import { useGifs } from "hooks/useGifs";
-import SearchForm from "components/SearchForm";
-import { useCallback } from "react";
+import { useLocation } from "wouter"
+import TrendingSearches from "components/TrendingSearches"
+import ListOfGifs from "components/ListOfGifs"
+import { useGifs } from "hooks/useGifs"
+import SearchForm from "components/SearchForm"
+import { useCallback } from "react"
+import { Helmet } from 'react-helmet'
+
 
 
 export default function Home() {
@@ -18,6 +20,11 @@ export default function Home() {
 
     return (
         <>
+        <Helmet>
+            <title>
+                Home | Giffy
+            </title>
+        </Helmet>
         <SearchForm onSubmit={handleSubmit}/>
         <div className="App-main">
             <div className="App-results">
