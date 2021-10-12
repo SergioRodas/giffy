@@ -1,11 +1,11 @@
-import './App.css';
+import './App.css'
 import Home from './pages/Home'
 import SearchResults from './pages/SearchResults'
 import Detail from './pages/Detail'
-import StaticContext from './context/StaticContext';
+import StaticContext from './context/StaticContext'
 import { Link, Route } from 'wouter'
-import { GifsContextProvider } from './context/GifsContext';
-import { Suspense } from 'react';
+import { GifsContextProvider } from './context/GifsContext'
+import { Suspense } from 'react'
 
 
 
@@ -26,7 +26,7 @@ function App() {
             path="/"/>
           <Route 
             component={SearchResults} 
-            path="/search/:keyword"/>
+            path="/search/:keyword/:rating?"/>
           <Route 
             component={Detail} 
             path="/gif/:id"/>

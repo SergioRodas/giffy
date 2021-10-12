@@ -1,9 +1,12 @@
 import React, { useState } from "react"
 import { useLocation } from "wouter"
 
-function SearchForm ({ onSubmit }) {
-    const [keyword, setKeyword] = useState('')
-    const [path, pushLocation] = useLocation()
+const RATINGS = ['g', 'pg', 'pg-13', 'r']
+
+export default function SearchForm ({ initialKeyword = '', initialRating = ''}) {
+    const [keyword, setKeyword] = useState(decodeURIComponent(initialKeyword))
+    const [rating, setRating] = useState(initialRating)
+    const [path, pushLocation] = useLocation() //eslint-disable-line
     
     const handleChange = evt => {
         setKeyword(evt.target.value)
@@ -12,15 +15,28 @@ function SearchForm ({ onSubmit }) {
     const handleSubmit = evt => {
         evt.preventDefault()
         // navegar a otra ruta
-        pushLocation(`/search/${keyword}`)
+        pushLocation(`/search/${keyword}/${rating}`)
+    }
+
+    const handleChangeRating = (evt) => {
+        setRating(evt.target.value)
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-         <button>Buscar</button>
-            <input placeholder="Busca un gif aquí..." onChange={handleChange} type="text" value={keyword}/>
-        </form>
-    )
+      <form onSubmit={handleSubmit}>
+        <button>Buscar</button>
+        <input
+          placeholder="Busca un gif aquí..."
+          onChange={handleChange}
+          type="text"
+          value={keyword}
+        />
+        <select onChange={handleChangeRating} value={rating}>
+          <option disabled>Rating type</option>
+          {RATINGS.map((rating) => (
+            <option key={rating}>{rating}</option>
+          ))}
+        </select>
+      </form>
+    );
 }
-
-export default React.memo(SearchForm)
