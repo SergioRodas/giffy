@@ -1,15 +1,18 @@
 import React, { useState } from "react"
+import { useLocation } from "wouter"
 
 function SearchForm ({ onSubmit }) {
     const [keyword, setKeyword] = useState('')
+    const [path, pushLocation] = useLocation()
+    
+    const handleChange = evt => {
+        setKeyword(evt.target.value)
+    }
 
     const handleSubmit = evt => {
         evt.preventDefault()
-        onSubmit({keyword})
-    }
-
-    const handleChange = evt => {
-        setKeyword(evt.target.value)
+        // navegar a otra ruta
+        pushLocation(`/search/${keyword}`)
     }
 
     return (

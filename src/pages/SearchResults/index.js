@@ -38,7 +38,7 @@ export default function SearchResults ({ params }) {
                   <title>{title}</title>
                   <meta name="description" content={title}></meta>
               </Helmet>
-              <SearchForm onSubmit={handleSubmit}/>
+              <SearchForm/>
               <h3 className="App-title">
               {decodeURI(keyword)}
               </h3>
