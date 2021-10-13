@@ -1,5 +1,6 @@
 import { useLocation } from "wouter"
 import useForm from "./hook"
+import css from "./SearchForm.module.css"
 
 const RATINGS = ['g', 'pg', 'pg-13', 'r']
 
@@ -28,21 +29,26 @@ export default function SearchForm ({ initialKeyword = '', initialRating = ''}) 
     }
 
     return (
-      <form onSubmit={handleSubmit}>
-        <button>Buscar</button>
+      <>
+      <form onSubmit={handleSubmit} className={css["c-search"]}>
+        <button className={css["c-search-btn"]}>Buscar</button>
         <input
-          placeholder="Busca un gif aquí..."
+          className={css["c-search-input"]}
+          placeholder="Search a gif here..."
           onChange={handleChange}
           type="text"
           value={keyword}
         />
-        <select onChange={handleChangeRating} value={rating}>
-          <option disabled>Rating type</option>
+        <select value={rating} onChange={handleChangeRating}>
+          <option disabled>
+            Rating:
+          </option>
           {RATINGS.map((rating) => (
             <option key={rating}>{rating}</option>
           ))}
         </select>
         <small>{times}</small>
       </form>
-    );
+    </>
+    )
 }

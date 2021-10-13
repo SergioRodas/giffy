@@ -1,6 +1,6 @@
 .Gif {
   --gifShadow-size : var(--gridList-gap, 6px);
-  margin-bottom: 0;
+  margin-bottom: .5em;
 }
 
 .Gif-link {
@@ -9,11 +9,6 @@
   text-decoration: none;
   position: relative;
   width: 100%;
-}
-
-.Gif-link img {
-  height: inherit;
-  object-fit: cover;
 }
 
 .Gif h4 {
@@ -33,6 +28,18 @@
 
 i {
   font-size: 80px;
+}
+
+.Gif {
+  margin-bottom: 0;
+}
+
+.Gif, .Gif-link {
+  height: 100%;
+}
+.Gif-link img {
+  height: inherit;
+  object-fit: cover;
 }
 
 .Gif:nth-child(5n + 1) img {
@@ -111,4 +118,5 @@ i {
     grid-column: span 1;
     grid-row: span 1;
   }
+
 }

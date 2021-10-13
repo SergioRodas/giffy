@@ -11,21 +11,23 @@ export default function Home() {
 
     return (
         <>
-        <Helmet>
-            <title>
-                Home | Giffy
-            </title>
-        </Helmet>
-        <SearchForm/>
+      <Helmet>
+        <title>Home | Giffy</title>
+      </Helmet>
+      <header className="o-header">
+        <SearchForm />
+      </header>
+      <div className="App-wrapper">
         <div className="App-main">
-            <div className="App-results">
-                <h3 className="App-title">Última búsqueda</h3>
-                <ListOfGifs gifs={gifs}/>
-            </div>
-            <div className="App-Category">
-                <TrendingSearches/>
-            </div>
+          <div className="App-results">
+            <h3 className="App-title">Última búsqueda</h3>
+            <ListOfGifs gifs={gifs} />
+          </div>
+          <div className="App-category">
+            <TrendingSearches />
+          </div>
         </div>
-        </>
+      </div>
+    </>
     )
 }

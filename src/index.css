@@ -30,18 +30,15 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: var(--fz);
+  background-color: var(--theme-body-bg);
   color: var(--theme-body-txt);
 }
 
-
-button {
-  background: crimson;
-  border: 0;
-  color: #fff;
-  padding: 8px 16px;
-  font-size: 16px;
-  border-radius: 10px 0 0 10px;
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
+
 
 a {
   color: #09f;
@@ -55,15 +52,12 @@ ul {
   padding: 0;
 }
 
-form {
-  display: flex;
-  margin: 0 auto 30px;
-  justify-content: center;
-}
 
-input[type=text] {
-  border-radius: 0 10px 10px 0;
-  font-size: 16px;
-  border: none;
-  padding: 4px 16px;
+/* -------------------- rf-layout  - Component / header */
+.o-header {
+  background-color: inherit;
+  position: sticky;
+  top: 0;
+  z-index: var(--zIndex-header);
+  max-height: var(--search-size-mx-h);
 }
