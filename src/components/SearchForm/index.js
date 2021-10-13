@@ -1,15 +1,20 @@
-import React, { useState } from "react"
 import { useLocation } from "wouter"
+import useForm from "./hook"
 
 const RATINGS = ['g', 'pg', 'pg-13', 'r']
 
 export default function SearchForm ({ initialKeyword = '', initialRating = ''}) {
-    const [keyword, setKeyword] = useState(decodeURIComponent(initialKeyword))
-    const [rating, setRating] = useState(initialRating)
+
+    const { keyword, rating, times, updateKeyword, updateRating } = useForm({
+      initialKeyword,
+      initialRating,
+    })
+
     const [path, pushLocation] = useLocation() //eslint-disable-line
-    
+
     const handleChange = evt => {
-        setKeyword(evt.target.value)
+        updateKeyword(evt.target.value)
+        
     }
 
     const handleSubmit = evt => {
@@ -19,7 +24,7 @@ export default function SearchForm ({ initialKeyword = '', initialRating = ''}) 
     }
 
     const handleChangeRating = (evt) => {
-        setRating(evt.target.value)
+        updateRating(evt.target.value)
     }
 
     return (
@@ -37,6 +42,7 @@ export default function SearchForm ({ initialKeyword = '', initialRating = ''}) 
             <option key={rating}>{rating}</option>
           ))}
         </select>
+        <small>{times}</small>
       </form>
     );
 }
