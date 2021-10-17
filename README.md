@@ -1,6 +1,6 @@
 # Giffy
 
-Gifs search application made following step by step (and with own modifications) the React course dictated by @midudev .
+Gifs search application made following step by step (and with own modifications) the React course dictated by ###[@midudev](https://github.com/midudev/) .
 
 He is my greatest reference in the world of programming, as well as a React expert and GitHub Star.
 
