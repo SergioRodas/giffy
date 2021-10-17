@@ -47,7 +47,7 @@ export default function SearchForm ({ initialKeyword = '', initialRating = ''}) 
             <option key={rating}>{rating}</option>
           ))}
         </select>
-        <small>{times}</small>
+        <small className={css["Search-times"]}>{times}</small>
       </form>
     </>
     )
