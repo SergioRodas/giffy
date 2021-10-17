@@ -24,9 +24,11 @@ export default function Detail ({ params }) {
 
   return <>
       <Helmet>
-        <title>{title} || Giffy</title>
+        <title className="App-title-head">{title.charAt(0).toUpperCase() + title.slice(1)} || Giffy</title>
       </Helmet>
-      <h3 className="App-title">{gif.title}</h3>
+      <h3 className="App-title-detail">{gif.title}</h3>
+      <div className="Gif-detail">
       <Gif {...gif} />
+      </div>
     </>
 }
